@@ -63,8 +63,8 @@ function transformCode(str: string) {
   try {
     transformedCode =
       bubleTransform(transformedCode, {
-        transforms: { 
-          templateString: false 
+        transforms: {
+          templateString: false
         },
         // jsx: 'Inula.createElement'
       }).code ?? '';
@@ -222,6 +222,7 @@ export function Markdown() {
           }
           // Hack: process all livedemo code to livedemo language and replace these after
           processedText = processedText.replaceAll(/\`\`\`(.*) livedemo/g, '```livedemo');
+          console.log(processedText, 'processedText');
           setContent(markdownParser.render(processedText));
         });
     }

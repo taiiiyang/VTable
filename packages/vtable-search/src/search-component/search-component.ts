@@ -85,6 +85,7 @@ export class SearchComponent {
         if (this.queryMethod(this.queryStr, value, { col, row, table: this.table })) {
           // deal merge cell
           const mergeCell = this.table.getCellRange(col, row);
+          // 判断当前是 合并单元个
           if (mergeCell.start.col !== mergeCell.end.col || mergeCell.start.row !== mergeCell.end.row) {
             // find is cell already in queryResult
             let isIn = false;
